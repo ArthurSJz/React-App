@@ -56,3 +56,40 @@ body {
 .main-content {
     padding: 20px;
 }
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #e2e4e6;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.15);
+}
+
+.list-item span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.delete-button {
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #ff4c4c;
+}
+

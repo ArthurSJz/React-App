@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Complete the project",
+    "isCompleted": false
+  },
+  {
+    "id": 2,
+    "title": "Review codebase",
+    "isCompleted": true
+  },
+  {
+    "id": 3,
+    "title": "Write documentation",
+    "isCompleted": false
+  }
+]

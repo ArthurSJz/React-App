@@ -1,19 +1,28 @@
+import { useState } from 'react';
+import tasksData from '../assets/tasks.json'
+
 const KanbanBoard = () => {
+
+  const [tasks, setTasks] = useState(tasksData);
+
+  const filterTasksByStatus = (status) => {
+    return tasks.filter(task => task.status === status);
+  };
+
   return (
     <div className="kanban-board">
-      <div className="kanban-column">
-        <h3>To Do</h3>
-        <div className="kanban-card">Task 1</div>
-        <div className="kanban-card">Task 2</div>
-      </div>
-      <div className="kanban-column">
-        <h3>In Progress</h3>
-        <div className="kanban-card">Task 3</div>
-      </div>
-      <div className="kanban-column">
-        <h3>Done</h3>
-        <div className="kanban-card">Task 4</div>
-      </div>
+      {["todo", "in-progress", "done"].map(status => (
+        <div className="kanban-column" key={status}>
+          <h3>
+            {status.charAt(0).toUpperCase() + status.slice(1).replace('-', ' ')}
+          </h3>
+          {filterTasksByStatus(status).map(task => (
+            <div className="kanban-card" key={task.id}>
+              {task.title}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
