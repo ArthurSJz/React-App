@@ -1,95 +1,146 @@
+/* App.css */
+
+/* Basic Reset */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #00274e; /* Light background */
+  color: #333;
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #282c34;
-    color: white;
-}
-
-.logo {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.sidebar {
-    width: 200px;
-    background-color: #333;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    color: white;
-    padding: 10px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 8px 0;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    background-color: #282c34;
-    color: white;
+h2, h3 {
+  color: #2c3e50; /* Darker shade for headings */
 }
 
 .container {
-    margin-left: 200px; /* space for the sidebar */
+  display: flex;
+  flex-direction: column;  /* Stack children vertically */
+  align-items: center;     /* Center children horizontally within the container */
+  
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Remove flex centering for vertical positioning */
+  justify-content: flex-start; /* Align children to the start of the container */
+  min-height: 100vh;          /* Ensure the container covers at least full view height (optional) */
+}
+header, footer {
+  background-color: #2a3a4b; /* Dark blue-green */
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
 }
 
-.main-content {
-    padding: 20px;
+.kanban-column {
+  background-color: #e8f5e9; /* Light green background */
+  border: 1px solid #8eafaa; /* Border matching the theme */
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
 }
 
-
-ul {
-    list-style-type: none;
-    padding: 0;
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
 }
 
-.list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #e2e4e6;
-    border-radius: 5px;
-    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.15);
+.kanban-card {
+  background-color: #0e4d42; /* Dark green for cards */
+  color: #ffffff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.list-item span {
-    flex-grow: 1;
-    margin-right: 10px;
+nav > ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }
 
-.delete-button {
-    background-color: #ff6b6b;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
+nav > ul > li {
+  list-style: none;
+  margin: 0 15px;
 }
 
-.delete-button:hover {
-    background-color: #ff4c4c;
+nav > ul > li > a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
+nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+.kanban-board {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Keep top-level elements stacked */
+  align-items: center;
+}
+.kanban-columns {
+  display: flex;           /* Lay out columns horizontally */
+  justify-content: space-around; /* Evenly distribute columns */
+  width: 100%;
+  flex-wrap: wrap;         /* Allow wrapping for smaller screens if needed */
+}
+
+.add-task-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.kanban-column {
+  width: 30%;             /* Adjust width based on how many columns you have */
+  background-color: #e8f5e9;
+  border: 1px solid #8eafaa;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  width: 60%;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.add-task {
+  background-color: #337ab7;
+  color: white;
+}
+
+button.add-task:hover {
+  background-color: #285e8e;
+}
+.kanban-card {
+  background-color: #0e4d42;
+  color: #ffffff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+  display: flex;           /* Use flexbox to layout content */
+  justify-content: space-between; /* Space out content horizontally */
+  align-items: center;     /* Center content vertically */
+}
